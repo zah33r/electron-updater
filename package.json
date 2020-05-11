@@ -1,11 +1,15 @@
 {
   "name": "angular-electron",
-  "version": "7.0.1",
+  "version": "1.0.0",
   "description": "Angular 9 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
     "name": "Maxime GRIS",
     "email": "maxime.gris@gmail.com"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/zah33r/electron-updater.git"
   },
   "keywords": [
     "angular",
@@ -32,6 +36,7 @@
     "electron:local": "npm run build:prod && electron .",
     "electron:linux": "npm run build:prod && electron-builder build --linux",
     "electron:windows": "npm run build:prod && electron-builder build --windows",
+    "electron:windows-publish": "npm run build:prod && electron-builder build --windows --publish always",
     "electron:mac": "npm run build:prod && electron-builder build --mac",
     "test": "ng test",
     "e2e": "npm run build:prod && cross-env TS_NODE_PROJECT='e2e/tsconfig.e2e.json' mocha --timeout 300000 --require ts-node/register e2e/**/*.e2e.ts",
