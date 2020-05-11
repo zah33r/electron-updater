@@ -1,7 +1,7 @@
 import { app, BrowserWindow, screen, ipcMain } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-const { autoUpdater } = require('electron-updater');
+import { autoUpdater } from "electron-updater"
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
@@ -50,6 +50,10 @@ function createWindow(): BrowserWindow {
   });
 
   win.once('ready-to-show', () => {
+    autoUpdater.checkForUpdatesAndNotify();
+  });
+
+  win.on('maximize', () => {
     autoUpdater.checkForUpdatesAndNotify();
   });
 
