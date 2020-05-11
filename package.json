@@ -1,6 +1,6 @@
 {
   "name": "angular-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular 9 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
@@ -8,8 +8,8 @@
     "email": "maxime.gris@gmail.com"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/zah33r/electron-updater.git"
+    "type": "git",
+    "url": "https://github.com/zah33r/electron-updater.git"
   },
   "keywords": [
     "angular",
