@@ -1,14 +1,34 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>AngularElectron</title>
   <base href="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Electron Auto Update Example</title>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background-color: #eaeaea;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <h1>Electron Auto Update Example</h1>
+  <p id="version"></p>
+  <script>
+    const { ipcRenderer } = require('electron');
+    const version = document.getElementById('version');
+
+    ipcRenderer.send('app_version');
+    ipcRenderer.on('app_version', (event, arg) => {
+      ipcRenderer.removeAllListeners('app_version');
+      version.innerText = 'Version ' + arg.version;
+    });
+  </script>
   <app-root>Loading...</app-root>
 </body>
-</html>
